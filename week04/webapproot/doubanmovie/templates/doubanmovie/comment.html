@@ -1,0 +1,11 @@
+{% extends 'doubanmovie/base.html' %}
+{% block content %} 
+<h2>Comments for {{movie}}:</h2>
+<ul class="list-group" >
+    {% for comment in comments %}
+        <li class="list-group-item" >Rate [{{comment.rate}}] - {{comment.text}}</li>
+    {% empty %}
+        <li>no comments</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

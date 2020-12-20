@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'oe*ov@nzp*ysfl3ksl%5@^q02@6)-rauup!wr_br9)z^!$u&(q'
+SECRET_KEY = 'qmnejse_(nhpp_wcipspq9d%vzc!qlh7$-4*dj(em)$1n8s#_i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'doubanmovie',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'movie_db',
+        'USER': 'user',
+        'PASSWORD': '123456',
+        'HOST': '47.103.36.85',
+        'PORT': '3306',
     }
 }
 

@@ -1,0 +1,13 @@
+{% extends 'doubanmovie/base.html' %}
+{% block content %}
+<h2>Movies</h2>
+<ul class="list-group">
+    {% for movie in movies %}
+        <li class="list-group-item"> 
+            <a href="comments/{{movie.Id}}"> {{ movie.title }} </a>
+        </li>
+    {% empty %}
+        <li> No movies </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
